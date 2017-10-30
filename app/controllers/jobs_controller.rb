@@ -4,13 +4,14 @@ class JobsController < ApplicationController
   end
 
   def new
-  @job = Job.new
+    @job = Job.new
   end
 
   def create
-    @job = Job.new(params.require(:job).permit(:title, :company, :url))
+
+    @job = Job.new(params.require(:job).permit(:title, :company_id, :url, :location, :job_type))
     if @job.save
-      redirect_to root_path
+      redirect_to jobs_path
     else
       render "new"
     end

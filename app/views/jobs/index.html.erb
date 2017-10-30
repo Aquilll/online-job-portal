@@ -1,9 +1,8 @@
 <h1>Jobs</h1>
-<% @jobs.each do |job| %>
-  <div class="job">
-    <h2><%= link_to job.title, job.url %></h2>
-    <p><%= job.company %></p>
+<% @jobs.each_with_index do |job, index| %>
+  <div style ="border:1px solid blue; text-align:center;">
+    <h3><%= index %> <%= link_to job.title, job.url %> (<%= job.company.name%>)</h3>
+    <h5>Job Type: <%= job.company.company_type %></h5>
   </div>
 <% end %>
 <p><%= paginate @jobs %></p>
-<p><%= link_to "Add a job", new_job_path %></p>

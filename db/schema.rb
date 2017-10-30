@@ -10,14 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171005182414) do
+ActiveRecord::Schema.define(version: 20171030193727) do
 
-  create_table "jobs", force: :cascade do |t|
-    t.string "title"
-    t.string "company"
-    t.string "url"
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "companies", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "company_type", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "jobs", force: :cascade do |t|
+    t.string "title", null: false
+    t.bigint "company_id", null: false
+    t.string "url"
+    t.string "location", null: false
+    t.string "job_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_jobs_on_company_id"
+  end
+
+  add_foreign_key "jobs", "companies"
 end

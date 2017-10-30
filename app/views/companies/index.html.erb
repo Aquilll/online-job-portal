@@ -1,0 +1,9 @@
+<h1>Companies</h1>
+<% @companies.each do |company| %>
+  <div class="job">
+    <h2><%= "#{company.name} (#{company.company_type})" %></h2>
+  </div>
+<% end %>
+<p><%= paginate @companies %></p>
+<p><%= link_to "Add a company", new_company_path %></p>
+<p><%= link_to "Add a job", new_job_path %></p>
