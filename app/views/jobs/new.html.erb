@@ -1,3 +1,4 @@
+<div class="row" style="margin-top:100px;">
 <%= simple_form_for @job do |form| %>
   <%= form.input :title, label: "Job title" %>
   <%= form.association :company, label: "Your company" %>
@@ -6,3 +7,4 @@
   <%= form.input :url, label: "Link to job" %>
   <%= form.button :submit %>
 <% end %>
+</div>
