@@ -1,4 +1,4 @@
-FROM cruz_image
+FROM cruz_image_full
 
 # Setup environment
 ADD ./Gemfile Gemfile

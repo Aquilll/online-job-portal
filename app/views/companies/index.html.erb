@@ -1,9 +1,17 @@
-<h1>Companies</h1>
-<% @companies.each do |company| %>
-  <div class="job">
-    <h2><%= "#{company.name} (#{company.company_type})" %></h2>
+<div class="row" style="margin-top:100px;">
+  <div class = "col-md-2">
+    <p><%= link_to "Add a company", new_company_path %></p>
   </div>
-<% end %>
-<p><%= paginate @companies %></p>
-<p><%= link_to "Add a company", new_company_path %></p>
-<p><%= link_to "Add a job", new_job_path %></p>
+  <div class = "col-md-2 col-md-offset-3">
+    <h1>Companies</h1>
+    <% @companies.each do |company| %>
+      <div class="job">
+        <h2><%= "#{company.name} (#{company.company_type})" %></h2>
+      </div>
+    <% end %>
+    <p><%= paginate @companies %></p>
+  </div>
+  <div class = "col-md-2 pull-right">
+    <p><%= link_to "Add a job", new_job_path %></p>
+  </div>
+</div>
