@@ -2,7 +2,7 @@
 <h1>Jobs</h1>
 <% @jobs.each_with_index do |job, index| %>
   <div style ="border:1px solid blue; text-align:center;">
-    <h3><%= index %> <%= link_to job.title, job.url %> (<%= job.company.name%>)</h3>
+    <h3><%= index+1 %> <%= link_to job.title, job.url %> (<%= job.company.name%>)</h3>
     <h5>Job Type: <%= job.company.company_type %></h5>
   </div>
 <% end %>

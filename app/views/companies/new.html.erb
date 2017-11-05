@@ -1,7 +1,14 @@
 <div class="row" style="margin-top:100px;">
+  <div class = "col-md-6">
+    <div class = "panel panel-success">
+      <div class = "panel-heading">Add a company</div>
+      <div class = "panel-body">
 <%= simple_form_for @company do |form| %>
   <%= form.input :name, label: "Name" %>
   <%= form.input :company_type, label: "Type" %>
   <%= form.button :submit %>
 <% end %>
+</div>
+</div>
+ </div>
 </div>

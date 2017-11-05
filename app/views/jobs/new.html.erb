@@ -1,4 +1,8 @@
 <div class="row" style="margin-top:100px;">
+  <div class = "col-md-6">
+    <div class = "panel panel-primary">
+      <div class = "panel-heading">Add A Job</div>
+      <div class = "panel-body">
 <%= simple_form_for @job do |form| %>
   <%= form.input :title, label: "Job title" %>
   <%= form.association :company, label: "Your company" %>
@@ -7,4 +11,8 @@
   <%= form.input :url, label: "Link to job" %>
   <%= form.button :submit %>
 <% end %>
+</div>
+</div>
+</div>
+</div>
 </div>
