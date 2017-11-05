@@ -8,7 +8,8 @@ class CompaniesController < ApplicationController
   @company = Company.new
   Rails.logger.debug "BB::"
   end
-
+  def show
+  end
   def create
     @company = Company.new(params.require(:company).permit(:name, :company_type))
     if @company.save
